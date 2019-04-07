@@ -1,0 +1,7 @@
+$("#flash-messages").html("<%= ejs( render 'shared/flash_messages') %>");
+
+<% if @shortened_url.errors.empty? %>
+	$("#display-short-url").html("<%= ejs( render 'shortened_url', shortened_url: @dup_url.nil? ? @shortened_url : @dup_url) %>");
+<% else %>
+	$("#display-short-url").html("");
+<% end %>

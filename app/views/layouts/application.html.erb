@@ -5,11 +5,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <div id="flash-messages">
+      <%= render partial: 'shared/flash_messages' %>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+      <header>
+        <h1>
+          <%= yield :header %>
+        </h1>
+      </header>
+
+      <br/>
+      <%= yield %>
+    </div>
   </body>
 </html>

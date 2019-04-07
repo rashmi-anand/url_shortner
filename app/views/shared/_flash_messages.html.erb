@@ -1,0 +1,12 @@
+<div id="flash">
+	<% flash.each do |key, msg| %>
+		<% if (key.to_sym == :error || key.to_sym == :success)%>
+			<div class="alert <%= key.to_sym == :error ? "alert-danger" : "alert-#{key}" %>">
+				<strong><%=key.capitalize%>!</strong> <%= flash[key]%>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+		<% end %>
+	<% end %>
+</div>

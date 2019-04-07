@@ -1,0 +1,10 @@
+<%= form_for @shortened_url, remote: true, html: {class: 'form-inline'} do |f| %>
+	<div class="form-group">
+		Please enter your URL here
+	</div>
+	<br/>
+	<div class="form-group">
+		<%= f.text_field :original_url, class: 'form-control' %>
+		<%= f.submit 'Generate', class: "btn btn-primary"%>
+	</div>
+<% end %>
